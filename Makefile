@@ -1,9 +1,7 @@
-concurrency := 10
-num := 10000
 port := 8080
 
 bench:
-	ab -c $(concurrency) -n $(num) http://127.0.0.1:$(port)/simple
+	wrk http://127.0.0.1:$(port)/simple
 
 go:
 	go build server.go
